@@ -2,51 +2,389 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Persona 4 Revival</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Persona 4 Revival — The Fog Lifts Again</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="loading">
 
-<nav class="nav">
-  <div class="logo">P4R</div>
-  <div class="links">
-    <a href="#about">About</a>
-    <a href="#features">Features</a>
-    <a href="prompts.html">Prompts</a>
+  <!-- TV STATIC INTRO SCREEN -->
+  <div class="tv-intro" id="tv-intro">
+    <canvas id="static-canvas"></canvas>
+    <div class="tv-intro-content">
+      <div class="tv-channel-text">CH. 4</div>
+      <div class="tv-on-text">YOU'RE WATCHING THE MIDNIGHT CHANNEL</div>
+    </div>
+    <div class="tv-scanlines"></div>
   </div>
-</nav>
 
-<header class="hero">
-  <video autoplay muted loop playsinline class="bg">
-    <source src="https://raw.githubusercontent.com/ManoloA0307/student-dashboard/main/Persona%204%20Revival%20%E2%80%94%20Teaser%20Trailer%20-%20Official%20ATLUS%20West%20(1080p)%20(1).mp4" type="video/mp4">
-  </video>
-  <div class="overlay"></div>
+  <!-- NOISE OVERLAY -->
+  <div class="noise-overlay"></div>
 
-  <div class="hero-text">
-    <h1>PERSONA 4 REVIVAL</h1>
-    <p>Return to Inaba. Seek the truth.</p>
-    <a href="#about" class="cta">Enter</a>
+  <!-- FOG LAYERS -->
+  <div class="fog-container" aria-hidden="true">
+    <div class="fog-layer fog-1"></div>
+    <div class="fog-layer fog-2"></div>
+    <div class="fog-layer fog-3"></div>
   </div>
-</header>
 
-<section id="about" class="section">
-  <h2>About</h2>
-  <p>
-    A modern reimagining of Persona 4, bringing enhanced visuals,
-    refined gameplay, and a new way to experience the story.
-  </p>
-</section>
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="nav-logo-icon">⬡</span>
+      <span>P4 <span class="gold">REVIVAL</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#characters">Team</a></li>
+      <li><a href="#theories">Theories</a></li>
+      <li><a href="prompts.html">Prompts</a></li>
+    </ul>
+    <div class="nav-tv" id="nav-tv-indicator">
+      <span class="tv-dot"></span>
+      <span>TV IS ON</span>
+    </div>
+  </nav>
 
-<section id="features" class="grid">
-  <div class="box">Modern Graphics</div>
-  <div class="box">Updated Gameplay</div>
-  <div class="box">New Experience</div>
-</section>
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
 
-<footer>
-  <p>CSIT 212 Project</p>
-</footer>
+    <!-- Floating arcana sigils -->
+    <div class="arcana-sigils" aria-hidden="true">
+      <span class="sigil s1">☿</span>
+      <span class="sigil s2">★</span>
+      <span class="sigil s3">⬡</span>
+      <span class="sigil s4">✦</span>
+      <span class="sigil s5">◈</span>
+    </div>
 
+    <div class="hero-content reveal-hero">
+      <div class="hero-eyebrow">
+        <span class="eye-brow-tag">
+          <span class="tag-dot"></span>ATLUS ✦ 2025
+        </span>
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line-1">PERSONA</span>
+        <span class="title-line-2">4<span class="gold star-pulse">★</span></span>
+        <span class="title-line-3">REVIVAL</span>
+      </h1>
+      <p class="hero-subtitle">
+        The midnight channel is buzzing. The fog is returning.<br/>
+        The Investigation Team rides again.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#countdown" class="btn btn-primary">
+          <span class="btn-inner">Count the Days</span>
+        </a>
+        <a href="#characters" class="btn btn-outline">
+          <span class="btn-inner">Meet the Team</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card reveal-card">
+      <div class="hero-card-inner">
+        <div class="card-glow-ring"></div>
+        <div class="persona-card-label">WILD CARD</div>
+        <div class="persona-card-symbol">☿</div>
+        <div class="persona-card-name">IZANAGI</div>
+        <div class="persona-card-divider"></div>
+        <div class="persona-card-rank">FOOL · ARCANA I</div>
+        <div class="persona-card-stars">✦ ✦ ✦ ✦ ✦</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-hint-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </header>
+
+  <!-- COUNTDOWN -->
+  <section id="countdown" class="countdown-section">
+    <div class="countdown-fog-top"></div>
+
+    <div class="section-header">
+      <span class="section-tag">◈ ANNOUNCEMENT ◈</span>
+      <h2 class="section-title">THE COUNTDOWN</h2>
+      <p class="section-sub">Counting down to the rumored Persona 4 Remake reveal at TGS 2025</p>
+    </div>
+
+    <div class="countdown-grid" id="countdown-grid">
+      <div class="countdown-block" id="block-days">
+        <div class="countdown-flip">
+          <span class="countdown-number" id="cd-days">00</span>
+        </div>
+        <span class="countdown-label">Days</span>
+        <div class="countdown-block-glow"></div>
+      </div>
+      <div class="countdown-sep"><span>:</span></div>
+      <div class="countdown-block" id="block-hours">
+        <div class="countdown-flip">
+          <span class="countdown-number" id="cd-hours">00</span>
+        </div>
+        <span class="countdown-label">Hours</span>
+        <div class="countdown-block-glow"></div>
+      </div>
+      <div class="countdown-sep"><span>:</span></div>
+      <div class="countdown-block" id="block-minutes">
+        <div class="countdown-flip">
+          <span class="countdown-number" id="cd-minutes">00</span>
+        </div>
+        <span class="countdown-label">Minutes</span>
+        <div class="countdown-block-glow"></div>
+      </div>
+      <div class="countdown-sep"><span>:</span></div>
+      <div class="countdown-block pulse-seconds" id="block-seconds">
+        <div class="countdown-flip">
+          <span class="countdown-number" id="cd-seconds">00</span>
+        </div>
+        <span class="countdown-label">Seconds</span>
+        <div class="countdown-block-glow seconds-glow"></div>
+      </div>
+    </div>
+
+    <div class="countdown-target" id="countdown-target-msg">
+      <span class="target-icon">📺</span>
+      Target: September 25, 2025 — TGS Stage Show
+    </div>
+
+    <div class="countdown-fog-bottom"></div>
+  </section>
+
+  <!-- CHARACTERS -->
+  <section id="characters" class="characters-section">
+    <div class="section-header">
+      <span class="section-tag">◈ INVESTIGATION TEAM ◈</span>
+      <h2 class="section-title">THE CHOSEN</h2>
+      <p class="section-sub">Those who entered the TV and lived to tell the tale</p>
+    </div>
+    <div class="characters-grid">
+
+      <div class="char-card" data-arcana="Fool" data-index="0">
+        <div class="char-card-shine"></div>
+        <div class="char-card-top">
+          <div class="char-avatar avatar-yu">
+            <span class="avatar-kanji">勇</span>
+            <div class="avatar-ring"></div>
+          </div>
+          <div>
+            <div class="char-arcana">FOOL</div>
+            <div class="char-arcana-num">Arcana I</div>
+          </div>
+        </div>
+        <div class="char-card-body">
+          <h3 class="char-name">Yu Narukami</h3>
+          <p class="char-role">Wild Card · Team Leader</p>
+          <p class="char-persona">Persona: <span class="gold">Izanagi</span></p>
+          <p class="char-desc">The silent protagonist. A transfer student to Inaba who awakens to the power of Persona and leads the Investigation Team against the serial murders.</p>
+        </div>
+        <div class="char-card-footer">
+          <span class="char-weapon">⚔ Two-Handed Sword</span>
+          <span class="char-affinity affinity-elec">⚡ Elec</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-arcana="Chariot" data-index="1">
+        <div class="char-card-shine"></div>
+        <div class="char-card-top">
+          <div class="char-avatar avatar-yosuke">
+            <span class="avatar-kanji">陽</span>
+            <div class="avatar-ring"></div>
+          </div>
+          <div>
+            <div class="char-arcana">CHARIOT</div>
+            <div class="char-arcana-num">Arcana VII</div>
+          </div>
+        </div>
+        <div class="char-card-body">
+          <h3 class="char-name">Yosuke Hanamura</h3>
+          <p class="char-role">Best Partner · Support</p>
+          <p class="char-persona">Persona: <span class="gold">Jiraiya</span></p>
+          <p class="char-desc">Yu's closest friend and self-proclaimed partner. Son of Junes' manager who hides pain behind humor and seeks the truth behind Saki's death.</p>
+        </div>
+        <div class="char-card-footer">
+          <span class="char-weapon">🎧 Dual Knives</span>
+          <span class="char-affinity affinity-wind">💨 Wind</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-arcana="Chariot" data-index="2">
+        <div class="char-card-shine"></div>
+        <div class="char-card-top">
+          <div class="char-avatar avatar-chie">
+            <span class="avatar-kanji">千</span>
+            <div class="avatar-ring"></div>
+          </div>
+          <div>
+            <div class="char-arcana">CHARIOT</div>
+            <div class="char-arcana-num">Arcana VII</div>
+          </div>
+        </div>
+        <div class="char-card-body">
+          <h3 class="char-name">Chie Satonaka</h3>
+          <p class="char-role">Physical Fighter · Protector</p>
+          <p class="char-persona">Persona: <span class="gold">Tomoe</span></p>
+          <p class="char-desc">A martial arts enthusiast obsessed with kung-fu and beef. Fiercely loyal to her friends, especially Yukiko, and the team's frontline brawler.</p>
+        </div>
+        <div class="char-card-footer">
+          <span class="char-weapon">👟 Kicks & Greaves</span>
+          <span class="char-affinity affinity-ice">🧊 Ice</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-arcana="Priestess" data-index="3">
+        <div class="char-card-shine"></div>
+        <div class="char-card-top">
+          <div class="char-avatar avatar-yukiko">
+            <span class="avatar-kanji">雪</span>
+            <div class="avatar-ring"></div>
+          </div>
+          <div>
+            <div class="char-arcana">PRIESTESS</div>
+            <div class="char-arcana-num">Arcana II</div>
+          </div>
+        </div>
+        <div class="char-card-body">
+          <h3 class="char-name">Yukiko Amagi</h3>
+          <p class="char-role">Healer · Flame Mage</p>
+          <p class="char-persona">Persona: <span class="gold">Konohana Sakuya</span></p>
+          <p class="char-desc">Heiress to the Amagi Inn with a mysterious beauty and a quietly rebellious heart. The team's primary healer who commands devastating fire magic.</p>
+        </div>
+        <div class="char-card-footer">
+          <span class="char-weapon">🪭 Fans & Rods</span>
+          <span class="char-affinity affinity-fire">🔥 Fire</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-arcana="Lovers" data-index="4">
+        <div class="char-card-shine"></div>
+        <div class="char-card-top">
+          <div class="char-avatar avatar-rise">
+            <span class="avatar-kanji">璃</span>
+            <div class="avatar-ring"></div>
+          </div>
+          <div>
+            <div class="char-arcana">LOVERS</div>
+            <div class="char-arcana-num">Arcana VI</div>
+          </div>
+        </div>
+        <div class="char-card-body">
+          <h3 class="char-name">Rise Kujikawa</h3>
+          <p class="char-role">Navigator · Idol</p>
+          <p class="char-persona">Persona: <span class="gold">Himiko</span></p>
+          <p class="char-desc">A famous idol who retired to Inaba seeking her true self. Her Persona's scanning abilities make her the team's indispensable all-seeing navigator.</p>
+        </div>
+        <div class="char-card-footer">
+          <span class="char-weapon">📡 Full Analysis</span>
+          <span class="char-affinity affinity-support">🩷 Support</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-arcana="Star" data-index="5">
+        <div class="char-card-shine"></div>
+        <div class="char-card-top">
+          <div class="char-avatar avatar-teddie">
+            <span class="avatar-kanji">熊</span>
+            <div class="avatar-ring"></div>
+          </div>
+          <div>
+            <div class="char-arcana">STAR</div>
+            <div class="char-arcana-num">Arcana XVII</div>
+          </div>
+        </div>
+        <div class="char-card-body">
+          <h3 class="char-name">Teddie</h3>
+          <p class="char-role">Healer · Mascot</p>
+          <p class="char-persona">Persona: <span class="gold">Kintoki-Douji</span></p>
+          <p class="char-desc">A mysterious bear-like being native to the TV World who seeks his own identity. Cheerful, punny, and surprisingly capable in a fight.</p>
+        </div>
+        <div class="char-card-footer">
+          <span class="char-weapon">🐻 Claws & Gloves</span>
+          <span class="char-affinity affinity-ice">🧊 Ice</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THEORIES -->
+  <section id="theories" class="theories-section">
+    <div class="section-header">
+      <span class="section-tag">◈ FAN HUB ◈</span>
+      <h2 class="section-title">YOUR THEORIES</h2>
+      <p class="section-sub">What do you think the remake will bring? Share your predictions.</p>
+    </div>
+    <div class="theories-layout">
+      <div class="theories-form-wrap">
+        <div class="form-header-bar">
+          <span class="form-header-icon">✎</span>
+          <span>Submit Your Theory</span>
+        </div>
+        <form class="theory-form" id="theory-form">
+          <div class="form-field">
+            <label for="theory-name">Your Name</label>
+            <input type="text" id="theory-name" placeholder="Detective Prince..." maxlength="30" />
+          </div>
+          <div class="form-field">
+            <label for="theory-category">Category</label>
+            <select id="theory-category">
+              <option value="gameplay">🎮 Gameplay Changes</option>
+              <option value="story">📖 Story Additions</option>
+              <option value="character">👥 New Characters</option>
+              <option value="mechanic">⚙ New Mechanics</option>
+              <option value="secret">🔍 Secret Content</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="theory-text">Your Theory</label>
+            <textarea id="theory-text" rows="4" maxlength="500" placeholder="The remake will finally let us explore Inaba's shopping district freely in 3D..."></textarea>
+            <div class="char-counter"><span id="char-count">0</span> / 500</div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="theory-submit">
+            <span class="btn-inner">⬡ Submit Theory</span>
+          </button>
+          <div id="form-feedback" class="form-feedback"></div>
+        </form>
+      </div>
+      <div class="theories-list-wrap">
+        <div class="theories-list-header">
+          <h3 class="theories-list-title">Community Board</h3>
+          <span id="theory-count" class="theory-count-badge">0</span>
+        </div>
+        <div id="theories-list" class="theories-list">
+          <div class="theories-empty-state">
+            <div class="empty-icon">🌫</div>
+            <p class="theories-empty">The board is silent… for now.</p>
+            <p class="theories-empty-sub">Be the first to pierce the fog.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-fog"></div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span>⬡</span>
+        <span>P4 <span class="gold">REVIVAL</span></span>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-disclaimer">This is a fan-made anticipation site. Not affiliated with Atlus or SEGA.<br/>Persona 4 and all related characters are property of Atlus Co., Ltd.</p>
+      <p class="footer-credit">Built entirely with AI prompting · <a href="prompts.html">View Prompts</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
