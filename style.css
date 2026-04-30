@@ -1,4 +1,4 @@
-/* --- BASE --- */
+/* BASE */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
   overflow-x: hidden;
 }
 
-/* --- NAVBAR --- */
+/* NAVBAR */
 .navbar {
   position: fixed;
   width: 100%;
@@ -33,6 +33,7 @@ body {
 .navbar h1 {
   color: #facc15;
   letter-spacing: 1px;
+  text-shadow: 0 0 10px #facc15;
 }
 
 .navbar a {
@@ -47,45 +48,80 @@ body {
   color: #facc15;
 }
 
-/* --- HERO (PARALLAX) --- */
+/* HERO VIDEO */
 .hero {
+  position: relative;
   height: 100vh;
-  background: url("https://static.wikia.nocookie.net/megamitensei/images/f/f6/Persona_4_Revival_logo.png/revision/latest/scale-to-width-down/1200?cb=20250608181454") center/cover no-repeat;
+  overflow: hidden;
   display: flex;
   align-items: center;
   padding: 60px;
-  position: relative;
 }
 
-/* dark overlay */
-.hero::after {
-  content: "";
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
+  z-index: 2;
   max-width: 600px;
-  z-index: 1;
 }
 
-.hero h2 {
+/* GLITCH TEXT */
+.glitch {
+  position: relative;
   font-size: 70px;
   color: #facc15;
   margin-bottom: 20px;
-  text-shadow: 0 0 20px rgba(250,204,21,0.7);
-  animation: fadeUp 1.2s ease;
+  animation: flicker 2s infinite;
 }
 
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.glitch::before {
+  color: red;
+  z-index: -1;
+  transform: translate(2px, 0);
+}
+
+.glitch::after {
+  color: cyan;
+  z-index: -2;
+  transform: translate(-2px, 0);
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* HERO TEXT */
 .hero p {
   font-size: 22px;
   margin-bottom: 25px;
   animation: fadeUp 1.5s ease;
 }
 
-/* --- BUTTON EFFECT --- */
+/* BUTTON */
 button {
   background: #facc15;
   color: black;
@@ -94,7 +130,6 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 0 0 rgba(250,204,21,0.5);
 }
 
 button:hover {
@@ -103,24 +138,26 @@ button:hover {
   box-shadow: 0 0 20px rgba(250,204,21,0.8);
 }
 
-/* --- SECTIONS --- */
+/* CONTAINER */
 .container {
   padding: 100px 40px;
 }
 
+/* CARDS */
 .card {
   margin-bottom: 70px;
   border-left: 5px solid #facc15;
+  border-right: 1px solid rgba(255,255,255,0.1);
   padding-left: 20px;
+
+  transform: translateX(-80px);
   opacity: 0;
-  transform: translateY(40px);
   transition: all 0.8s ease;
 }
 
-/* active when visible */
 .card.show {
+  transform: translateX(0);
   opacity: 1;
-  transform: translateY(0);
 }
 
 .card h2 {
@@ -129,19 +166,20 @@ button:hover {
   color: #facc15;
 }
 
-.card p, .card li {
+.card p,
+.card li {
   font-size: 18px;
   line-height: 1.6;
 }
 
-/* --- FOOTER --- */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
   background: #111;
 }
 
-/* --- ANIMATIONS --- */
+/* ANIMATIONS */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -153,9 +191,14 @@ footer {
   }
 }
 
-/* --- MOBILE --- */
+/* MOBILE */
 @media (max-width: 700px) {
-  .hero h2 {
+  .glitch {
     font-size: 40px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
   }
 }
