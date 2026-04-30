@@ -2,71 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Persona 4 Revival Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Persona 4 Revival</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <nav class="navbar">
-    <h1>Persona 4 Revival</h1>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="prompts.html">Prompts</a>
-    </div>
-  </nav>
+<nav class="nav">
+  <div class="logo">P4R</div>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="prompts.html">Prompts</a>
+  </div>
+</nav>
 
- <header class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
+<header class="hero">
+  <video autoplay muted loop playsinline class="bg">
     <source src="https://raw.githubusercontent.com/ManoloA0307/student-dashboard/main/Persona%204%20Revival%20%E2%80%94%20Teaser%20Trailer%20-%20Official%20ATLUS%20West%20(1080p)%20(1).mp4" type="video/mp4">
   </video>
+  <div class="overlay"></div>
 
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h2 class="glitch" data-text="PERSONA 4 REVIVAL">PERSONA 4 REVIVAL</h2>
-    <p>Return to Inaba. Discover the truth.</p>
-    <button onclick="scrollToBlog()">ENTER</button>
+  <div class="hero-text">
+    <h1>PERSONA 4 REVIVAL</h1>
+    <p>Return to Inaba. Seek the truth.</p>
+    <a href="#about" class="cta">Enter</a>
   </div>
 </header>
 
-  <main id="blog" class="container">
-    <section class="card">
-      <h2>What is Persona 4 Revival?</h2>
-      <p>
-        Persona 4 Revival is the announced remake of Persona 4, the classic ATLUS RPG originally released in 2008. The remake was officially announced by SEGA/ATLUS in June 2025.
-      </p>
-    </section>
-
-   <section class="card">
-  <h2>ABOUT</h2>
+<section id="about" class="section">
+  <h2>About</h2>
   <p>
-    Persona 4 Revival is a modern remake of the critically acclaimed RPG Persona 4, originally released in 2008. The game was officially announced in 2025 and aims to bring the experience to modern platforms with enhanced visuals and gameplay. :contentReference[oaicite:1]{index=1}
+    A modern reimagining of Persona 4, bringing enhanced visuals,
+    refined gameplay, and a new way to experience the story.
   </p>
 </section>
 
-    <section class="card">
-      <h2>Expected Improvements</h2>
-      <ul>
-        <li>Modern graphics and rebuilt environments</li>
-        <li>Updated character models</li>
-        <li>Smoother gameplay systems</li>
-        <li>A new way for fans to experience Inaba</li>
-      </ul>
-    </section>
+<section id="features" class="grid">
+  <div class="box">Modern Graphics</div>
+  <div class="box">Updated Gameplay</div>
+  <div class="box">New Experience</div>
+</section>
 
-    <section class="card">
-      <h2>Why Fans Are Excited</h2>
-      <p>
-        Persona 4 is known for its mystery story, small-town setting, strong characters, and emotional themes about truth and identity. Revival gives both new and returning players a chance to experience the game in a modern form.
-      </p>
-    </section>
-  </main>
+<footer>
+  <p>CSIT 212 Project</p>
+</footer>
 
-  <footer>
-    <p>Fan-made project for CSIT 212 Final Project.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
