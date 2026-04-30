@@ -1,11 +1,9 @@
-// smooth scroll button
 function scrollToBlog() {
   document.getElementById("blog").scrollIntoView({
     behavior: "smooth"
   });
 }
 
-// fade-in on scroll
 const cards = document.querySelectorAll(".card");
 
 function revealOnScroll() {
