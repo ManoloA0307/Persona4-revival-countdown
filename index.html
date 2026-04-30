@@ -1,42 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Student Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Persona 4 Revival Blog</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<nav>
-    <h1>📚 Student Dashboard</h1>
-    <a href="prompts.html">View Prompts</a>
-</nav>
+  <nav class="navbar">
+    <h1>Persona 4 Revival</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="prompts.html">Prompts</a>
+    </div>
+  </nav>
 
-<div class="container">
+  <header class="hero">
+    <div class="hero-content">
+      <h2>The Return to Inaba</h2>
+      <p>A fan-made blog about the upcoming remake of Persona 4.</p>
+      <button onclick="scrollToBlog()">Read More</button>
+    </div>
+  </header>
 
-    <section>
-        <h2>Courses</h2>
-        <input type="text" id="courseInput" placeholder="Enter course">
-        <button onclick="addCourse()">Add</button>
-        <ul id="courseList"></ul>
+  <main id="blog" class="container">
+    <section class="card">
+      <h2>What is Persona 4 Revival?</h2>
+      <p>
+        Persona 4 Revival is the announced remake of Persona 4, the classic ATLUS RPG originally released in 2008. The remake was officially announced by SEGA/ATLUS in June 2025.
+      </p>
     </section>
 
-    <section>
-        <h2>GPA Calculator</h2>
-        <input type="number" id="gradeInput" placeholder="Enter grade (0-4)">
-        <button onclick="addGrade()">Add Grade</button>
-        <p id="gpaResult">GPA: 0.00</p>
+    <section class="card">
+      <h2>Release Information</h2>
+      <p>
+        The official release date is currently listed as TBD. SEGA announced that Persona 4 Revival is coming to Xbox Game Pass, Xbox Series X|S, Windows, PlayStation 5, and Steam.
+      </p>
     </section>
 
-    <section>
-        <h2>To-Do List</h2>
-        <input type="text" id="taskInput" placeholder="Enter task">
-        <button onclick="addTask()">Add</button>
-        <ul id="taskList"></ul>
+    <section class="card">
+      <h2>Expected Improvements</h2>
+      <ul>
+        <li>Modern graphics and rebuilt environments</li>
+        <li>Updated character models</li>
+        <li>Smoother gameplay systems</li>
+        <li>A new way for fans to experience Inaba</li>
+      </ul>
     </section>
 
-</div>
+    <section class="card">
+      <h2>Why Fans Are Excited</h2>
+      <p>
+        Persona 4 is known for its mystery story, small-town setting, strong characters, and emotional themes about truth and identity. Revival gives both new and returning players a chance to experience the game in a modern form.
+      </p>
+    </section>
+  </main>
 
-<script src="script.js"></script>
+  <footer>
+    <p>Fan-made project for CSIT 212 Final Project.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
