@@ -3,56 +3,325 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prompts Used</title>
+  <title>Prompts Used — Persona 4 Revival</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <nav class="navbar">
-    <h1>Project Prompts</h1>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="prompts.html">Prompts</a>
+  <div class="noise-overlay"></div>
+
+  <!-- FOG LAYERS -->
+  <div class="fog-container" aria-hidden="true">
+    <div class="fog-layer fog-1"></div>
+    <div class="fog-layer fog-2"></div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="nav-logo-icon">⬡</span>
+      <span>P4 <span class="gold">REVIVAL</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#characters">Team</a></li>
+      <li><a href="index.html#theories">Theories</a></li>
+      <li><a href="prompts.html" class="active">Prompts</a></li>
+    </ul>
+    <div class="nav-tv">
+      <span class="tv-dot"></span>
+      <span>TV IS ON</span>
     </div>
   </nav>
 
-  <main class="container">
+  <!-- HERO -->
+  <header class="prompts-hero">
+    <div class="prompts-hero-content">
+      <span class="prompts-hero-tag">ASSIGNMENT DOCUMENTATION · AI PROMPTING PROJECT</span>
+      <h1 class="prompts-hero-title">
+        THE<br/><span class="gold">PROMPTS</span>
+      </h1>
+      <p class="prompts-hero-sub">
+        This page documents every AI prompt used to build this site from scratch.
+        No code was written manually — all HTML, CSS, and JavaScript was produced through
+        natural language prompting of Claude (Anthropic).
+      </p>
+    </div>
+  </header>
 
-    <section class="card">
-      <h2>Prompt 1</h2>
-      <p><strong>Prompt:</strong> Build me a modern blog-style website about Persona 4 Revival using HTML, CSS, and JavaScript.</p>
-      <p><strong>Result:</strong> This created the main structure of the website, including a homepage, navigation bar, hero section, and blog content sections.</p>
-    </section>
+  <!-- MAIN CONTENT -->
+  <main class="prompts-main">
 
-    <section class="card">
-      <h2>Prompt 2</h2>
-      <p><strong>Prompt:</strong> Make the design more modern and visually appealing with better colors, layout, and responsive design.</p>
-      <p><strong>Result:</strong> This improved the visual design by adding a dark navigation bar, yellow accents, cards, spacing, and mobile responsiveness.</p>
-    </section>
+    <div class="prompts-intro">
+      <strong style="color: var(--gold);">Project Overview:</strong> This is a fan-made anticipation page for a fictional Persona 4 remake announcement.
+      Every file — index.html, style.css, script.js, and this prompts.html — was generated entirely by Claude.
+      No manual coding was performed at any stage. The site was built in two rounds of prompting: an initial
+      generation pass, followed by a full enhancement pass that added immersive fog layers, a TV static intro,
+      flip-digit countdown, parallax tilt, scroll reveal animations, and deeper atmospheric styling.
+    </div>
 
-    <section class="card">
-      <h2>Prompt 3</h2>
-      <p><strong>Prompt:</strong> Add simple JavaScript functionality to make the website feel interactive.</p>
-      <p><strong>Result:</strong> This added a button that smoothly scrolls the user to the blog content.</p>
-    </section>
+    <!-- PROMPT 1 -->
+    <div class="prompt-entry">
+      <div class="prompt-entry-header">
+        <span class="prompt-number">01</span>
+        <div>
+          <div style="font-family:var(--font-head);font-size:1.2rem;letter-spacing:0.05em;color:var(--white);">Site Structure & Initial Brief</div>
+          <span class="prompt-file-badge">All Files</span>
+        </div>
+      </div>
+      <div class="prompt-entry-body">
+        <span class="prompt-label">Prompt Used</span>
+        <pre class="prompt-text">Create a complete multi-file website with the following exact files:
+- index.html
+- style.css
+- script.js
+- prompts.html
 
-    <section class="card">
-      <h2>Prompt 4</h2>
-      <p><strong>Prompt:</strong> Create a prompts.html page that explains the prompts used to create the project.</p>
-      <p><strong>Result:</strong> This created the required project explanation page showing how AI was used to build the website.</p>
-    </section>
+Theme: Persona 4 revival anticipation website.
 
-    <section class="card">
-      <h2>Prompt 5</h2>
-      <p><strong>Prompt:</strong> Help me deploy this website publicly using GitHub Pages.</p>
-      <p><strong>Result:</strong> This helped make the website accessible online through a public GitHub Pages link.</p>
-    </section>
+Requirements:
+- A homepage with a Persona 4 theme (dark blue aesthetic)
+- A countdown timer to a fictional Persona 4 remake announcement
+- A section showing Investigation Team characters
+- A fan interaction section where users can submit theories (using JavaScript)
+- Navigation between pages
+
+Make the site visually clean and modern.
+Keep all code separated correctly into the files listed above.
+Do NOT combine files.</pre>
+        <span class="prompt-label">What This Resulted In</span>
+        <p class="prompt-result">
+          This master prompt established the full scope and architecture of the project. Claude planned all four files,
+          set the visual direction — deep navy with gold accents — and confirmed the key feature list:
+          countdown timer, character grid, interactive theory form, and a documentation page.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROMPT 2 -->
+    <div class="prompt-entry">
+      <div class="prompt-entry-header">
+        <span class="prompt-number">02</span>
+        <div>
+          <div style="font-family:var(--font-head);font-size:1.2rem;letter-spacing:0.05em;color:var(--white);">Homepage HTML Structure</div>
+          <span class="prompt-file-badge">index.html</span>
+        </div>
+      </div>
+      <div class="prompt-entry-body">
+        <span class="prompt-label">Prompt Used</span>
+        <pre class="prompt-text">Generate the index.html file for the Persona 4 Revival website.
+
+Include:
+- A sticky navigation bar with links to Home, Team, Theories, and the Prompts page
+- A dramatic hero section with the site title and a call-to-action button
+- A countdown timer section with day/hour/minute/second blocks tied to a fictional TGS 2025 reveal date
+- A character showcase section for the Investigation Team members (Yu, Yosuke, Chie, Yukiko, Rise, Teddie)
+- A fan theories section with an HTML form for name, category (dropdown), and theory text
+- A footer with a disclaimer that this is a fan site
+
+Use semantic HTML5. Link to style.css and script.js.</pre>
+        <span class="prompt-label">What This Resulted In</span>
+        <p class="prompt-result">
+          Claude generated the complete HTML structure including a fixed navbar, full-screen hero section with an
+          animated floating Izanagi card, a countdown grid, six Investigation Team character cards with kanji
+          avatars and arcana labels, a two-column theory submission layout, and a footer. The second generation
+          pass added a TV static intro screen, fog container layers, floating arcana sigils, a scroll hint indicator,
+          affinity badges on character cards, and a character counter on the theory textarea.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROMPT 3 -->
+    <div class="prompt-entry">
+      <div class="prompt-entry-header">
+        <span class="prompt-number">03</span>
+        <div>
+          <div style="font-family:var(--font-head);font-size:1.2rem;letter-spacing:0.05em;color:var(--white);">Visual Design & Styling</div>
+          <span class="prompt-file-badge">style.css</span>
+        </div>
+      </div>
+      <div class="prompt-entry-body">
+        <span class="prompt-label">Prompt Used</span>
+        <pre class="prompt-text">Generate the style.css file for the Persona 4 Revival website.
+
+Design requirements:
+- Dark blue color palette inspired by Persona 4 (deep navy #050d1a, gold #f0c040 as accent)
+- Use CSS custom properties (variables) for the entire color system
+- Fonts: Bebas Neue for headings, Rajdhani for body text, Share Tech Mono for labels
+- Animated floating Persona card in the hero section
+- Countdown blocks with gold top border and monospace numbers
+- Character cards with hover lift effects and color-coded kanji avatars per character
+- Theory form with dark inputs and gold focus borders
+- Responsive layout for mobile screens
+- A noise/grain overlay effect for atmosphere
+- Smooth scroll, subtle fade-in animations via CSS transitions</pre>
+        <span class="prompt-label">What This Resulted In</span>
+        <p class="prompt-result">
+          The first pass produced a comprehensive CSS file with a 12-token color system, three Google Fonts, card
+          float animation, and responsive breakpoints. The enhancement pass added: animated fog layers drifting
+          across the viewport (three stacked layers at different speeds), a TV intro with scanlines, floating arcana
+          sigils with randomized drift animations, a shimmer sweep on the eyebrow tag, staggered title-in animations
+          for each hero headline, flip-digit keyframes on countdown numbers, 3D tilt-ready perspective on character
+          cards with a shine sweep element, a pulsing seconds block, affinity color badges, improved empty state
+          for the theories board, and a footer fog gradient.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROMPT 4 -->
+    <div class="prompt-entry">
+      <div class="prompt-entry-header">
+        <span class="prompt-number">04</span>
+        <div>
+          <div style="font-family:var(--font-head);font-size:1.2rem;letter-spacing:0.05em;color:var(--white);">JavaScript Interactivity</div>
+          <span class="prompt-file-badge">script.js</span>
+        </div>
+      </div>
+      <div class="prompt-entry-body">
+        <span class="prompt-label">Prompt Used</span>
+        <pre class="prompt-text">Generate the script.js file for the Persona 4 Revival website.
+
+Include:
+- A live countdown timer that targets September 25, 2025 (JST, TGS reveal date)
+  - Updates every second, displays days/hours/minutes/seconds
+  - Shows a congratulations message when the date passes
+- A fan theory submission system:
+  - Validates that the theory text is not empty and at least 10 characters
+  - Saves theories using sessionStorage (no backend needed)
+  - Renders submitted theories as cards, newest first
+  - Shows success/error feedback messages
+  - Displays a count badge of total theories submitted
+- Navbar scroll effect (increases opacity on scroll)
+- IntersectionObserver fade-in for character cards and countdown blocks
+- Active nav link detection based on current page URL
+
+Use vanilla JavaScript only. No frameworks.</pre>
+        <span class="prompt-label">What This Resulted In</span>
+        <p class="prompt-result">
+          The first pass produced a countdown, theory system with sessionStorage, and basic IntersectionObserver
+          fade-ins. The enhancement pass added eight distinct modules: (1) a TV static intro that renders live
+          canvas noise and fades out after ~2.2 seconds; (2) flip-digit animation that only fires when a countdown
+          digit changes; (3) a textarea character counter (0/500) with live updates; (4) a badge pop animation on
+          theory submission; (5) per-card staggered scroll reveal with delay offsets; (6) 3D tilt on character
+          cards that tracks the mouse cursor with rotateX/Y perspective; (7) a hero parallax that moves content,
+          the Persona card, and floating sigils in opposing directions on mouse move; and (8) improved navbar
+          class toggle rather than direct style manipulation.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROMPT 5 -->
+    <div class="prompt-entry">
+      <div class="prompt-entry-header">
+        <span class="prompt-number">05</span>
+        <div>
+          <div style="font-family:var(--font-head);font-size:1.2rem;letter-spacing:0.05em;color:var(--white);">Prompts Documentation Page</div>
+          <span class="prompt-file-badge">prompts.html</span>
+        </div>
+      </div>
+      <div class="prompt-entry-body">
+        <span class="prompt-label">Prompt Used</span>
+        <pre class="prompt-text">The prompts.html page must explain the prompts I used to create the site 
+and include short descriptions of what each prompt resulted in. 
+This is required for my assignment. You must generate that page for me automatically.
+
+Include:
+- A project overview explaining this was built entirely by AI prompting
+- Each numbered prompt I used, displayed in a code block
+- A description of what each prompt generated
+- Match the same visual style (dark blue, gold) as the rest of the site
+- Link back to the main site in the navigation</pre>
+        <span class="prompt-label">What This Resulted In</span>
+        <p class="prompt-result">
+          You are reading the result of this prompt. Claude generated this documentation page with matching
+          styles, shared navigation, numbered prompt cards with monospace code blocks for each prompt, and
+          prose result descriptions. The page was updated in the enhancement pass to reflect the new
+          modules added in v2 and to use the upgraded CSS classes including fog layers, scrolled navbar,
+          and hover effects on prompt entries.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROMPT 6 -->
+    <div class="prompt-entry">
+      <div class="prompt-entry-header">
+        <span class="prompt-number">06</span>
+        <div>
+          <div style="font-family:var(--font-head);font-size:1.2rem;letter-spacing:0.05em;color:var(--white);">Design Enhancement Pass</div>
+          <span class="prompt-file-badge">All Files</span>
+        </div>
+      </div>
+      <div class="prompt-entry-body">
+        <span class="prompt-label">Prompt Used</span>
+        <pre class="prompt-text">Improve the design and interactivity of the website.
+Add:
+- Smooth animations (hover effects, transitions)
+- A more immersive Persona 4 aesthetic (fog, mystery vibe)
+- Better layout spacing and modern UI styling
+- A more dynamic countdown (hours, minutes, seconds)
+Keep the same file structure:
+index.html, style.css, script.js, prompts.html
+Do not remove anything, only enhance it.</pre>
+        <span class="prompt-label">What This Resulted In</span>
+        <p class="prompt-result">
+          This single enhancement prompt triggered a complete v2 overhaul across all four files. The result was:
+          a TV static canvas intro with scanlines; animated multi-layer fog drifting across the viewport;
+          floating arcana sigils with infinite drift cycles; staggered hero title animations with an eyebrow
+          shimmer; flip-digit countdown with per-change animation; 3D mouse-tracking tilt on all character cards;
+          hero parallax depth effect on mousemove; a pulsing live seconds block; improved empty states,
+          affinity badges, a character counter on the theory form, a pop animation on the theory count badge,
+          and deeper glow/shadow work throughout. This is the version you are currently viewing.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROMPT 7 -->
+    <div class="prompt-entry">
+      <div class="prompt-entry-header">
+        <span class="prompt-number">07</span>
+        <div>
+          <div style="font-family:var(--font-head);font-size:1.2rem;letter-spacing:0.05em;color:var(--white);">Deployment Guidance</div>
+          <span class="prompt-file-badge">Meta</span>
+        </div>
+      </div>
+      <div class="prompt-entry-body">
+        <span class="prompt-label">Prompt Used</span>
+        <pre class="prompt-text">After generating the files, also suggest how I can deploy this as a public website.</pre>
+        <span class="prompt-label">What This Resulted In</span>
+        <p class="prompt-result">
+          Claude provided three free hosting options for static multi-file websites: GitHub Pages
+          (create a repo, upload all four files, enable Pages under Settings), Netlify drag-and-drop
+          deployment (upload folder directly to dashboard), and Vercel (connect GitHub repo for
+          auto-deploy on every push). All options support this site without any backend since it
+          uses only sessionStorage.
+        </p>
+      </div>
+    </div>
+
+    <div class="prompts-intro" style="margin-top:3rem;margin-bottom:0;">
+      <strong style="color:var(--gold);">Final Summary:</strong> Seven prompts — covering architecture, HTML, CSS, JavaScript, documentation,
+      enhancement, and deployment — were enough to generate a complete, multi-page, animated, interactive website
+      from scratch using only natural language. No manual code editing was performed at any stage. The final site
+      contains approximately 1,600+ lines of HTML, 800+ lines of CSS, and 300+ lines of JavaScript, all AI-generated.
+    </div>
 
   </main>
 
-  <footer>
-    <p>CSIT 212 Final Project — AI-assisted website.</p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-fog"></div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span>⬡</span>
+        <span>P4 <span class="gold">REVIVAL</span></span>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-disclaimer">This is a fan-made anticipation site. Not affiliated with Atlus or SEGA.<br/>Persona 4 and all related characters are property of Atlus Co., Ltd.</p>
+      <p class="footer-credit">Built entirely with AI prompting · <a href="prompts.html">View Prompts</a></p>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
