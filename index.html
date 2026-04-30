@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h1>📚 Student Dashboard</h1>
+    <a href="prompts.html">View Prompts</a>
+</nav>
+
+<div class="container">
+
+    <section>
+        <h2>Courses</h2>
+        <input type="text" id="courseInput" placeholder="Enter course">
+        <button onclick="addCourse()">Add</button>
+        <ul id="courseList"></ul>
+    </section>
+
+    <section>
+        <h2>GPA Calculator</h2>
+        <input type="number" id="gradeInput" placeholder="Enter grade (0-4)">
+        <button onclick="addGrade()">Add Grade</button>
+        <p id="gpaResult">GPA: 0.00</p>
+    </section>
+
+    <section>
+        <h2>To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
